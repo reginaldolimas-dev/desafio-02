@@ -47,7 +47,50 @@ body {
 
 .descricao {
   color: #64748b;
-  margin-bottom: 30px;
+  margin-bottom: 24px;
+}
+
+.filtro-container {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+
+.filtro-titulo {
+  font-weight: 600;
+  color: #123b68;
+}
+
+.filtro-opcoes {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.filtro-opcao {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: white;
+  padding: 6px 14px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  user-select: none;
+  transition: all 0.2s ease;
+}
+
+.filtro-opcao:hover {
+  border-color: #123b68;
+}
+
+.filtro-opcao input {
+  cursor: pointer;
+  accent-color: #123b68;
 }
 
 .grid-cotacoes {

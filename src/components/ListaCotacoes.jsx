@@ -17,7 +17,11 @@ export default function ListaCotacoes({
   }
 
   if (!cotacoes || cotacoes.length === 0) {
-    return <p className="descricao">Nenhuma cotação disponível no momento.</p>;
+    return (
+      <p className="descricao">
+        Nenhuma cotação a exibir. Marque pelo menos uma moeda no filtro acima.
+      </p>
+    );
   }
 
   return (
