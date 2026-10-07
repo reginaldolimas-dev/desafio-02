@@ -7,20 +7,19 @@ function useCotacoes() {
   const [carregando, setCarregando] = useState(true);
 
   useEffect(() => {
-    return () => {
-      async function carregar() {
-        try {
-          const dados = await buscarCotacoes();
-          setCotacoes(dados);
-        } catch (error) {
-            setError("Não foi possível carregar as cotações" + error);
-        } finally {
-          setCarregando(false);
-        }
+    async function carregar() {
+      try {
+        const dados = await buscarCotacoes();
+        setCotacoes(dados);
+      } catch (err) {
+        setError("Não foi possível carregar as cotações: " + (err.message || err));
+      } finally {
+        setCarregando(false);
       }
-      carregar();
-      };
-    }, []);
+    }
+
+    carregar();
+  }, []);
 
   return { cotacoes, error, carregando };
 }
