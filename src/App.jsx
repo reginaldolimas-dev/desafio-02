@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import FiltroCotacoes from "./components/FiltroCotacoes";
 import ListaCotacoes from "./components/ListaCotacoes";
+import ConversorMoedas from "./components/ConversorMoedas";
 import useCotacoes from "./hooks/useCotacoes";
 import "./App.css";
 
@@ -49,6 +50,9 @@ function App() {
           />
         </section>
 
+        {!carregando && !error && (
+          <ConversorMoedas cotacoes={cotacoesFiltradas} />
+        )}
       </main>
 
       <Footer />

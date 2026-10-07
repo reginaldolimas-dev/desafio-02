@@ -141,6 +141,80 @@ body {
   border-radius: 8px;
 }
 
+.conversor {
+  padding: 45px 0;
+  border-top: 1px solid #e2e8f0;
+}
+
+.conversor h2 {
+  font-size: 26px;
+  margin-bottom: 10px;
+}
+
+.conversor-input-grupo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 360px;
+  margin-bottom: 28px;
+}
+
+.conversor-label {
+  font-weight: 600;
+  color: #123b68;
+}
+
+.conversor-input {
+  padding: 12px 16px;
+  font-size: 18px;
+  border: 2px solid #cbd5e1;
+  border-radius: 10px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.conversor-input:focus {
+  border-color: #123b68;
+}
+
+.conversor-resultados {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.conversor-resultado {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: white;
+  padding: 16px 20px;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 2px 8px #0000000a;
+}
+
+.conversor-moeda {
+  background: #dbeafe;
+  color: #123b68;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.conversor-nome {
+  flex: 1;
+  color: #64748b;
+  font-size: 15px;
+}
+
+.conversor-valor {
+  font-size: 20px;
+  font-weight: bold;
+  color: #123b68;
+}
+
 .footer {
   margin-top: auto;
   text-align: center;
@@ -173,5 +247,24 @@ body {
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
+  }
+
+  .conversor {
+    padding: 30px 0;
+  }
+
+  .conversor-input-grupo {
+    max-width: 100%;
+  }
+
+  .conversor-resultado {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .conversor-valor {
+    font-size: 18px;
+    width: 100%;
+    text-align: right;
   }
 }

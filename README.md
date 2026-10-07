@@ -22,13 +22,16 @@ Muitas APIs financeiras fornecem taxas de câmbio em formatos JSON brutos, de di
   - `Header`: Cabeçalho com título e descrição do aplicativo.
   - `FiltroCotacoes`: Componente interativo com seleção via checkboxes.
   - `ListaCotacoes`: Gerenciador da exibição em grid e controle de estados.
-  - `CardCotacao`: Exibição visual de cada cotação (sigla, nome por extenso, valor formatado e taxa de conversão).
+  - `CardCotacao`: Exibição visual de cada cotação (sigla, nome por extenso, cotação comercial brasileira `1 MOEDA = R$ X` e valor formatado).
+  - `ConversorMoedas`: Conversor interativo em tempo real para cálculo de Reais (BRL) para moedas estrangeiras.
   - `Footer`: Rodapé com créditos e indicação da fonte de dados.
-- [x] **4. Interação com os Dados**: Filtro interativo de moedas por meio de checkboxes com atualização em tempo real (`useState`). O usuário pode escolher quais moedas deseja visualizar.
+- [x] **4. Interação com os Dados**:
+  - **Filtro de moedas**: Seleção reativa via checkboxes (`useState`).
+  - **Conversão em tempo real**: Campo numérico interativo onde o usuário digita qualquer quantia em BRL e visualiza instantaneamente o valor equivalente convertido para as moedas selecionadas.
 - [x] **5. Responsividade**: Layout totalmente adaptável com 3 breakpoints:
   - 🖥️ **Desktop (> 1024px)**: Grid em 3 colunas.
   - 📱 **Tablet (<= 1024px)**: Grid em 2 colunas.
-  - 📲 **Celular (<= 768px)**: Grid em 1 coluna e filtros alinhados verticalmente.
+  - 📲 **Celular (<= 768px)**: Grid em 1 coluna e formulário do conversor e filtros adaptados para tela cheia.
 - [x] **6. Organização Visual**: Interface estilizada com CSS moderno, paleta de cores harmoniosa, tipografia legível, bordas arredondadas e sombras sutis.
 - [x] **7. Comportamentos da Aplicação**:
   - **Carregamento (*Loading*)**: Mensagem amigável enquanto a requisição à API é processada.
@@ -43,9 +46,10 @@ Muitas APIs financeiras fornecem taxas de câmbio em formatos JSON brutos, de di
 App
 ├── Header
 ├── Main
-│   ├── FiltroCotacoes (Interação)
-│   └── ListaCotacoes
-│       └── CardCotacao (Card individual por moeda)
+│   ├── FiltroCotacoes (Interação: Filtro)
+│   ├── ListaCotacoes
+│   │   └── CardCotacao (Card individual por moeda)
+│   └── ConversorMoedas (Interação: Conversão em tempo real)
 └── Footer
 ```
 
@@ -55,6 +59,7 @@ App
 src/
 ├── components/
 │   ├── CardCotacao.jsx      # Card individual de cotação
+│   ├── ConversorMoedas.jsx  # Conversor interativo de moedas
 │   ├── FiltroCotacoes.jsx   # Filtro interativo com checkboxes
 │   ├── Footer.jsx           # Rodapé da aplicação
 │   ├── Header.jsx           # Cabeçalho da aplicação
