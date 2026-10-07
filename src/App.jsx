@@ -1,9 +1,11 @@
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import ListaCotacoes from "./components/ListaCotacoes";
 import useCotacoes from "./hooks/useCotacoes";
 import "./App.css";
 
 function App() {
+  const { cotacoes, error, carregando } = useCotacoes();
 
   return (
     <div className="app">
@@ -17,11 +19,11 @@ function App() {
             Valores de referência em relação ao real brasileiro.
           </p>
 
-          {/*<ListaCotacoes*/}
-          {/*  cotacoes={cotacoes}*/}
-          {/*  carregando={carregando}*/}
-          {/*  erro={erro}*/}
-          {/*/>*/}
+          <ListaCotacoes
+            cotacoes={cotacoes}
+            carregando={carregando}
+            erro={error}
+          />
         </section>
 
       </main>
